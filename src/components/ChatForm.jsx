@@ -9,9 +9,8 @@ const ChatForm = ({chatHistory, setChatHistory, generateBotResponse}) => {
         const userMessage = inputRef.current.value.trim();
         if (!userMessage) return;
         inputRef.current.value = "";
-        setChatHistory((history) => [...history, { sender: 'user', message: userMessage }]); 
-        setChatHistory((history) => [...history, {sender: 'bot',  message: "Thinking"}])
-        generateBotResponse([...chatHistory, { sender: 'user', message: userMessage }]);
+        
+        generateBotResponse(userMessage);
     }
 
   return (
