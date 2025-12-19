@@ -1,6 +1,14 @@
 import ChatbotIcon from "./components/ChatbotIcon";
+import ChatForm from "./components/ChatForm";
+import ChatMessage from "./components/ChatMessage";
+import { useState } from "react";
 
 function App() {
+  const [chatHistory, setChatHistory] = useState([]);
+  const generateBotResponse = (history) => {
+    console.log("Generating bot response for history:", history);
+  };
+
   return (
     <div className="flex min-h-screen w-full items-center justify-center bg-gray-100 p-4">
       <div className="w-full max-w-[420px] overflow-hidden rounded-[15px] bg-white
@@ -32,27 +40,15 @@ function App() {
           </div>
 
           {/* User message */}
-          <div className="ml-auto max-w-[75%] rounded-[10px] bg-[#4a90e2] px-4 py-3 text-sm text-white">
-            Hi! I have a question about your services.
-          </div>
+          {chatHistory.map((chat, index) => (
+            <ChatMessage key={index} chat={chat}/>
+          ))}
         </div>
 
         {/* Footer */}
         <div className="p-3">
-          <form className="flex items-center gap-2">
-            <input
-              type="text"
-              placeholder="Type your message..."
-              className="flex-1 rounded-full border border-gray-400 px-4 py-2 text-sm"
-            />
-            <button className="material-symbols-rounded flex h-10 w-10
-              items-center justify-center rounded-full bg-[#4a90e2]
-              text-white transition hover:bg-[#2266b3]">
-              arrow_upward
-            </button>
-          </form>
+        <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory } generateBotResponse={generateBotResponse}/>
         </div>
-
       </div>
     </div>
   );
