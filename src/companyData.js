@@ -13,7 +13,7 @@ Stay connected with us through our vibrant social media community. Follow us for
 - Twitter: https://twitter.com/aromaco
 - LinkedIn: https://linkedin.com/company/aromacoffee
 
-For inquiries, feel free to reach out via email at hello@aromacoffee.com or call us at +44 115 123-4567.
+For inquiries, feel free to reach out via email at hello@aromacoffee.com or call us at +44 115 123 4567.
 
 Our website, https://www.aromacoffee.com, offers a shopping experience for coffee beans, accessories, and subscriptions. Learn about our unique blends, explore brewing guides, and subscribe to receive fresh coffee delivered to your doorstep.
 
