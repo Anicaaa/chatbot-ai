@@ -21,8 +21,8 @@ const ChatForm = ({chatHistory, setChatHistory, generateBotResponse}) => {
             className="flex-1 rounded-full border border-gray-400 px-4 py-2 text-sm"
         />
         <button className="material-symbols-rounded flex h-10 w-10
-            items-center justify-center rounded-full bg-[#4a90e2]
-            text-white transition hover:bg-[#2266b3]">
+            items-center justify-center rounded-full bg-[#967969]
+            text-white transition hover:bg-[#b9a498]">
             arrow_upward
         </button>
     </form>

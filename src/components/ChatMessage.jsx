@@ -1,46 +1,43 @@
-import React from 'react'
-import ChatbotIcon from './ChatbotIcon';
+import React from "react";
+import ChatbotIcon from "./ChatbotIcon";
 
 const ChatMessage = ({ chat }) => {
+  if (!chat.message) return null;
+
   const isBot = chat.sender === "bot";
-
-  if (isBot) {
-    const sections = chat.message.split("\n\n");
-
-    return (
-      <div className={`flex items-start gap-3 justify-start`}>
-        <ChatbotIcon />
-        <div className="max-w-[75%]">
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="mb-2 rounded-lg bg-[#e5effa] p-4 text-sm text-black prose prose-sm whitespace-pre-line"
-            >
-              {section.split("\n").map((line, i) => {
-                // Bold lines wrapped in **
-                if (line.startsWith("**") && line.endsWith("**")) {
-                  return (
-                    <p key={i} className="font-bold">
-                      {line.slice(2, -2)}
-                    </p>
-                  );
-                }
-                return <p key={i}>{line}</p>;
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+  const sections = chat.message.split("\n\n");
 
   return (
-    <div className="flex items-start gap-3 justify-end">
-      <p className="max-w-[75%] rounded-[10px] p-4 text-sm bg-[#4a90e2] text-white">
-        {chat.message}
-      </p>
+    <div className={`flex items-start gap-3 ${isBot ? "justify-start" : "justify-end"}`}>
+      {isBot && <ChatbotIcon />}
+      <div
+        className={`max-w-[75%] rounded-lg p-4 text-sm
+          ${isBot ? "bg-[#dcd0ca] text-black" : "bg-[#967969] text-white"}`}
+      >
+        {sections.map((section, index) => (
+          <div key={index} className="mb-2 last:mb-0">
+            {section.split("\n").map((line, i) => {
+              const parts = line.split(/(\*\*.*?\*\*)/g);
+
+              return (
+                <p key={i}>
+                  {parts.map((part, j) =>
+                    part.startsWith("**") && part.endsWith("**") ? (
+                      <span key={j} className="font-bold">
+                        {part.slice(2, -2)}
+                      </span>
+                    ) : (
+                      part
+                    )
+                  )}
+                </p>
+              );
+            })}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default ChatMessage
+export default ChatMessage;
