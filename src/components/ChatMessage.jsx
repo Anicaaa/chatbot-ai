@@ -11,7 +11,7 @@ const ChatMessage = ({ chat }) => {
     <div className={`flex items-start gap-3 ${isBot ? "justify-start" : "justify-end"}`}>
       {isBot && <ChatbotIcon />}
       <div
-        className={`max-w-[75%] rounded-lg p-4 text-sm
+        className={`max-w-[75%] rounded-lg p-4 text-base outfit
           ${isBot ? "bg-[#dcd0ca] text-black" : "bg-[#967969] text-white"}`}
       >
         {sections.map((section, index) => (

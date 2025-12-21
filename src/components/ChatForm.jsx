@@ -18,7 +18,7 @@ const ChatForm = ({chatHistory, setChatHistory, generateBotResponse}) => {
         <input ref={inputRef}
             type="text"
             placeholder="Type your message..."
-            className="flex-1 rounded-full border border-gray-400 px-4 py-2 text-sm"
+            className="flex-1 rounded-full border border-gray-400 px-4 py-2 text-base"
         />
         <button className="material-symbols-rounded flex h-10 w-10
             items-center justify-center rounded-full bg-[#967969]

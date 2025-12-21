@@ -78,7 +78,11 @@ function App() {
 };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-gray-100 p-4">
+  <section
+        className="w-full h-screen bg-cover  bg-fixed"
+        style={{ backgroundImage: `url('/bg-coffee.jpg')` }}
+      >
+    <div className="fixed bottom-0 left-0 right-0 w-full max-w-[420px] sm:bottom-4 sm:right-4 sm:left-auto z-50 p-2 sm:p-0">
       <div className="w-full max-w-[420px] overflow-hidden rounded-[15px] bg-white
         shadow-[0_0_128px_rgba(0,0,0,0.1),0_32px_64px_-48px_rgba(0,0,0,0.05)]">
 
@@ -86,7 +90,7 @@ function App() {
         <div className="flex items-center justify-between bg-[#967969] px-5 py-4">
           <div className="flex items-center gap-2.5">
             <ChatbotIcon />
-            <h2 className="text-white text-xl font-semibold">
+            <h2 className="text-white text-xl font-semibold outfit">
               Chatbot Assistant
             </h2>
           </div>
@@ -99,12 +103,12 @@ function App() {
         {/* Chat body */}
         {isVisible && (
         <>
-        <div className="flex h-[70vh] flex-col gap-4 overflow-y-auto px-5 py-4">
+        <div className="flex sm:h-[50vh] h-[70vh] flex-col gap-4 overflow-y-auto px-5 py-4">
 
           {/* Bot message */}
           <div className="flex items-start gap-3">
             <ChatbotIcon />
-            <p className="max-w-[75%] rounded-[10px] bg-[#dcd0ca] px-4 py-3 text-sm">
+            <p className="max-w-[75%] rounded-[10px] bg-[#dcd0ca] px-4 py-3 text-base outfit">
               Hello! I'm your Chatbot Assistant. How can I help you today?
             </p>
           </div>
@@ -123,6 +127,7 @@ function App() {
         )}
       </div>
     </div>
+    </section> 
   );
 }
 
