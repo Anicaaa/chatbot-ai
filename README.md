@@ -1,16 +1,33 @@
-# React + Vite
+# chatbot-ai
+A chatbot for **aRoma Coffee**, built to answer questions about the coffee shop using a **Gemini API key** and local company data.  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://github.com/user-attachments/assets/b03418c0-c692-47df-b089-99ad7a9e9921
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a chatbot assistant that helps users get information about aRoma Coffee, including:
 
-## React Compiler
+- Introduction to the coffee shop  
+- Location and opening hours  
+- Menu items and prices  
+- Contact information and social media links  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The chatbot uses a local `companyData` file to provide answers and enhance responses with the Gemini API.  
 
-## Expanding the ESLint configuration
+## Challenges
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+One of the main challenges was keeping the **API key secure**. Making the project live without a backend server would risk exposing the key. A proper deployment requires setting up a backend to handle API requests safely.
+
+Another challenge was working with the chatbot code itself, specifically the `generateBotResponse` function. Difficulties included:
+
+- Using `async` / `await` correctly to handle asynchronous API calls.  
+- Handling POST request errors.  
+- Understanding and applying the **spread operator (`...`)**.  
+- Managing chat history updates in a way that keeps previous messages while showing a "Thinking..." placeholder for the bot response.
+- Making my project available on production was not possible to keep sensitive information such as API key secure. It would have been secure if the project was done with the backend. However, my project is only frontend, hence risk to expose personal information. 
+
+## Technologies Used
+
+- React
+- Tailwind CSS
+- API
