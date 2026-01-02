@@ -30,4 +30,4 @@ Another challenge was working with the chatbot code itself, specifically the `ge
 
 - React
 - Tailwind CSS
-- API
+- Gemini API
